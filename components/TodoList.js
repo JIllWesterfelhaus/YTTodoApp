@@ -12,16 +12,20 @@ export default TodoList = ({ list }) => {
                 {list.name}
             </Text>
 
-        </View >
-        <View style={{ alignItems: "center" }}>
-            <Text style={styles.count}>{remainingCount}</Text>
-            <Text style={styles.subtitle}>Remaining</Text>
+            <View>
+                <View style={{ alignItems: "center" }}>
+                    <Text style={styles.count}>{remainingCount}</Text>
+                    <Text style={styles.subtitle}>Remaining</Text>
+                </View>
+                <View style={{ alignItems: "center" }}>
+                    <Text style={styles.count}>{completedCount}</Text>
+                    <Text style={styles.subtitle}>Completed</Text>
+                </View>
+            </View>
         </View>
-        <View style={{ alignItems: "center" }}>
-            <Text style={styles.count}>{completedCount}</Text>
-            <Text style={styles.subtitle}>Completed</Text>
-        </View>
-          
+
+
+
     );
 };
 
