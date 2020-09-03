@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, FlatList, ViewComponent } fro
 import { AntDesign } from '@expo/vector-icons';
 import colors from './Colors';
 import tempData from './tempData';
-import TodoList from './components/TodoList'
+import TodoList from './components/TodoList';
 
 export default class App extends React.Component {
   render() {
