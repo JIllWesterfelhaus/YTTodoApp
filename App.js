@@ -31,11 +31,7 @@ export default class App extends React.Component {
             keyExtractor={item => item.name}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            renderItem={({ item }) => (
-              <View>
-                <Text>{item.name}</Text>
-              </View>
-            )}
+            renderItem={({ item }) => <TodoList list={item} />}
           />
         </View>
       </View>
