@@ -3,7 +3,7 @@
 export default tempData = [
     {
         name: "Plan a Trip",
-        color: "#24A6D9",
+        color: "#1060b5",
         todos: [
             {
                 title: "Book Flight",
@@ -25,7 +25,7 @@ export default tempData = [
     },
     {
         name: "Errands",
-        color: "#8022D9",
+        color: "#651DA8",
         todos: [
             {
                 title: "Buy Milk",

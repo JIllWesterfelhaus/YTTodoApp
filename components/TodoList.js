@@ -24,8 +24,6 @@ export default TodoList = ({ list }) => {
             </View>
         </View>
 
-
-
     );
 };
 
