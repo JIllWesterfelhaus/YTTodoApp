@@ -1,14 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, FlatList, ViewComponent } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from './Colors';
 import tempData from './tempData';
 import TodoList from './components/TodoList';
 
 export default class App extends React.Component {
+  state = {
+    addTodoVisible: false
+  }
+
+  toggleAddTodoModal() {
+    this.setState({ addTodoVisible: !this.state.addTodoVisible });
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <Modal animationType="slide" visible={this.state.addTodoVisible}>
+          <View>
+            <Text>I'm a modal! Yay!</Text>
+          </View>
+        </Modal>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
