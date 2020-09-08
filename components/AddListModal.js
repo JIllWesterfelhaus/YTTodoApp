@@ -24,7 +24,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    title: {
+        fontSize: 28,
+        fontWeight: "800",
+        color: colors.black,
+        alignSelf: "center",
+        marginBottom: 16
     }
+
 });
 
 
