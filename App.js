@@ -8,7 +8,7 @@ import TodoList from './components/TodoList';
 export default class App extends React.Component {
   state = {
     addTodoVisible: false
-  }
+  };
 
   toggleAddTodoModal() {
     this.setState({ addTodoVisible: !this.state.addTodoVisible });
@@ -31,7 +31,7 @@ export default class App extends React.Component {
         </View>
 
         <View style={{ marginVertical: 48 }}>
-          <TouchableOpacity style={styles.addList}>
+          <TouchableOpacity style={styles.addList} onPress={() => this.toggleAddTodoModal()}>
             <AntDesign name="plus" size={16} color={colors.blue} />
           </TouchableOpacity>
 
