@@ -11,6 +11,10 @@ export default class AddListModal extends React.Component {
         color: this.backgroundColors[0]
     };
 
+    renderColors() {
+        return this.backgroundColors.map(color => { })
+    }
+
     render() {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="padding">
