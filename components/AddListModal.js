@@ -12,7 +12,11 @@ export default class AddListModal extends React.Component {
     };
 
     renderColors() {
-        return this.backgroundColors.map(color => { })
+        return this.backgroundColors.map(color => {
+            return (
+                <TouchableOpacity key={color} />
+            )
+        })
     }
 
     render() {
