@@ -7,8 +7,9 @@ export default class AddListModal extends React.Component {
     backgroundColors = ["#5CD859", "#24A6D9", "595BD9", "#8022D9", "#D85963", "#D88559"];
 
     state = {
-        name: ""
-    }
+        name: "",
+        color: this.backgroundColors[0]
+    };
 
     render() {
         return (
@@ -26,7 +27,7 @@ export default class AddListModal extends React.Component {
                         onChangeText={text => this.setState({ name: text })}
                     />
 
-                    <TouchableOpacity style={[styles.create, { backgroundColor: "blue" }]}>
+                    <TouchableOpacity style={[styles.create, { backgroundColor: this.state.color }]}>
                         <Text style={{ color: colors.white, fontWeight: "600" }}>Create!</Text>
                     </TouchableOpacity>
                 </View>
