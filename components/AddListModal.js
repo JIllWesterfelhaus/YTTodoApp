@@ -4,19 +4,37 @@ import { AntDesign } from '@expo/vector-icons'
 import colors from "../Colors";
 
 export default class AddListModal extends React.Component {
-    backgroundColors = ["#5CD859", "#24A6D9", "595BD9", "#8022D9", "#D85963", "#D88559"];
+    backgroundColors = ["#5CD859", "#24A6D9", "#595BD9", "#8022D9", "#D85963", "#D88559"];
 
     state = {
         name: "",
         color: this.backgroundColors[0]
     };
 
+    createTodo = () => {
+        const { name, color } = this.state
+
+        tempData.push({
+            name,
+            color,
+            todos: []
+
+        });
+
+        this.setState({ name: "" });
+        this.props.closeModal();
+    };
+
     renderColors() {
         return this.backgroundColors.map(color => {
             return (
-                <TouchableOpacity key={color} />
-            )
-        })
+                <TouchableOpacity
+                    key={color}
+                    style={[styles.colorSelect, { backgroundColor: color }]}
+                    onPress={() => this.setState([color])}
+                />
+            );
+        });
     }
 
     render() {
@@ -35,7 +53,13 @@ export default class AddListModal extends React.Component {
                         onChangeText={text => this.setState({ name: text })}
                     />
 
-                    <TouchableOpacity style={[styles.create, { backgroundColor: this.state.color }]}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 12 }}>
+                        {this.renderColors()}
+                    </View>
+
+                    <TouchableOpacity style={[styles.create, { backgroundColor: this.state.color }]}
+                        onPress={this.createTodo}>
+
                         <Text style={{ color: colors.white, fontWeight: "600" }}>Create!</Text>
                     </TouchableOpacity>
                 </View>
@@ -72,6 +96,11 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         alignItems: "center",
         justifyContent: "center"
+    },
+    colorSelect: {
+        width: 30,
+        height: 30,
+        borderRadius: 4
     }
 });
 
